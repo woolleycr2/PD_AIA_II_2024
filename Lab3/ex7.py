@@ -11,8 +11,11 @@ A_3 = A * 5
 print(A_3)
 A_4 = A / 5
 print(A_4)
-print(np.transpose(A_1))
-print(np.transpose(A_2))
-print(np.transpose(A_3))
-print(np.transpose(A_4))
 
+print(A + B.T)
+print(A - B.T)
+print(A * B.T)
+print(A / B.T)
+
+print(A @ B)
+print((A @ B) @ np.linalg.inv(A @ B))
