@@ -1,0 +1,6 @@
+Lapte
+Carne
+Unt
+Cafea
+Fructe
+Legume
