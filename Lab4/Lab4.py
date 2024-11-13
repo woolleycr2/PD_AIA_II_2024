@@ -1,25 +1,38 @@
 import pandas as pd
 
+#1
 df1 = pd.read_csv('date_climatice_2016.csv')
 print(df1)
+
+#2
 df1.pop("LAT")
 df1.pop("LON")
 df1.pop("R24")
-print(df1)
+
+#3
 df1 = df1.astype({
     "DATCLIM" : "datetime64[ns]",
     "CODST" : "category"})
 df1.info()
+
+#4
 df2 = pd.read_csv('statii_meteo.csv')
 print(df2)
-df2 = df2.rename(columns={"ID": "CODST"})
-print(df2)
-df2 = df2.merge(df1, on='CODST')
-print(df2)
+
+#5
+df2 = df2.rename(columns={"ID": "CODST", "Nume": "NUME"})
+
+#6
+df1 = df2.merge(df1, on='CODST')
+
+#7
 mean_TMED = df1["TMED"].mean()
 print(mean_TMED)
 max_TMAX = df1["TMAX"].max()
-print(max_TMAX)
-df1.query('
+print(max_TMAX, df1.query("TMAX == @max_TMAX")["NUME"])
 min_TMIN = df1["TMIN"].min()
-print(min_TMIN)
+print(min_TMIN, df1.query("TMIN == @min_TMIN")["NUME"])
+
+#8
+
+#9
