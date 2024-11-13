@@ -1,16 +1,1 @@
-{
-    "DATAPOINT": {
-		"SIZE": 2000,
-        "SEPARATOR": ","
-    },
-    "TRAINING":
-    {
-        "VALIDATION_SPLIT": 0.2,
-        "EPOCHS": 500,
-		"LEARNING_RATE": 0.01
-    },
-	"TESTING":
-	{
-		"MAX_ERR": 0.0025
-	}
-}
+{"DATAPOINT": {"SIZE": 2000, "SEPARATOR": ","}, "TRAINING": {"VALIDATION_SPLIT": 0.2, "EPOCHS": 500, "LEARNING_RATE": 0.01}, "TESTING": {"MAX_ERR": 0.01}}
