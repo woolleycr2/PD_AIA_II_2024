@@ -52,6 +52,8 @@ plt.tight_layout()
 
 #3b
 
+#3c
+
 print(df1)
 plt.show()
 
