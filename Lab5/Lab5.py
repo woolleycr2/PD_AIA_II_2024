@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from adjustText import adjust_text
 
 plt.figure(figsize=(20, 25))
 
@@ -71,8 +72,8 @@ plt.subplot(5, 2, 9)
 plt.scatter(x_3c, y_3c)
 x_3c.reset_index(drop = True, inplace = True)
 y_3c.reset_index(drop = True, inplace = True)
-for i, text in enumerate(df1_3c["NUME"]):
-    plt.text(x_3c[i] + 0.1, y_3c[i]+ 0.1, text)
+annotations = [plt.text(x_3c[i], y_3c[i], annotation) for i, annotation in enumerate(df1_3c["NUME"])]
+adjust_text(annotations, arrowprops=dict(arrowstyle="-"))
 plt.xlabel("ALT")
 plt.ylabel("TMIN")
 plt.title("Grafic 3c")
